@@ -14,8 +14,6 @@ export const EXERCISES = [
     majorMuscles: ["Arms"],
     minorMuscles: ["Bicep", "Shoulders"],
     example: "arnold-press.gif",
-    notes: "",
-    modifications: "",
   },
   {
     name: "Bicep Curl",
@@ -26,7 +24,6 @@ export const EXERCISES = [
     example: "bicep-curl.gif",
     notes:
       "Don't use momentum. Make sure the movement is coming from the bottom half of your arm not your shoulder moving the weight.",
-    modifications: "",
   },
   {
     name: "Bicycle Crunch",
@@ -70,7 +67,7 @@ export const EXERCISES = [
     majorMuscles: ["Legs"],
     minorMuscles: ["Glutes"],
     example: "box-toe-touch.gif",
-    notes: "",
+
     modifications:
       "Easier: Don't use a box, just practice toe touch without\nHarder: Increase Speed",
   },
@@ -83,7 +80,6 @@ export const EXERCISES = [
     example: "broad-jump.gif",
     notes:
       "You can do these for speed, or for distance. Speed = Cardio, Distance/Height = Plyo",
-    modifications: "",
   },
   {
     name: "Bulgarian Split Squat",
@@ -93,7 +89,6 @@ export const EXERCISES = [
     minorMuscles: ["Hamstrings", "Quads"],
     example: "bulgarian-split-squat.gif",
     notes: "Use Single 30LB Dumbbell or an Olympic Bar",
-    modifications: "",
   },
   {
     name: "Burpee",
@@ -115,7 +110,6 @@ export const EXERCISES = [
     minorMuscles: [],
     example: "burpee-broad-jump.gif",
     notes: "Do laps of these across the room if you have the space.",
-    modifications: "",
   },
   {
     name: "Butt Kickers",
@@ -136,7 +130,6 @@ export const EXERCISES = [
     example: "calf-raise.jpg",
     notes:
       "Play around with foot placement, some gyms also have machines for this",
-    modifications: "",
   },
   {
     name: "Chest Press",
@@ -146,7 +139,6 @@ export const EXERCISES = [
     minorMuscles: ["Chest"],
     example: "chest-press.gif",
     notes: "You can do this lying on the ground, or on a bench top",
-    modifications: "",
   },
   {
     name: "Close to Wide Grip Burnout",
@@ -155,8 +147,6 @@ export const EXERCISES = [
     majorMuscles: ["Arms"],
     minorMuscles: ["Bicep"],
     example: "close-to-wide-grip-burnout.gif",
-    notes: "",
-    modifications: "",
   },
   {
     name: "Compass Jump",
@@ -176,8 +166,6 @@ export const EXERCISES = [
     majorMuscles: ["Full Body"],
     minorMuscles: [],
     example: "crab-crawl.gif",
-    notes: "",
-    modifications: "",
   },
   {
     name: "Curtsey Lunges",
@@ -186,8 +174,6 @@ export const EXERCISES = [
     majorMuscles: ["Legs"],
     minorMuscles: ["Inner Thigh"],
     example: "curtsey-lunges.gif",
-    notes: "",
-    modifications: "",
   },
   {
     name: "Deficit Squat",
@@ -196,8 +182,6 @@ export const EXERCISES = [
     majorMuscles: ["Legs"],
     minorMuscles: ["Glutes"],
     example: "deficit-squat.png",
-    notes: "",
-    modifications: "",
   },
   {
     name: "Donkey Kick",
@@ -206,7 +190,7 @@ export const EXERCISES = [
     majorMuscles: ["Legs"],
     minorMuscles: ["Glutes"],
     example: "donkey-kick.gif",
-    notes: "",
+
     modifications: "Easier: Don't use weights\nHarder: Use heavy weights",
   },
   {
@@ -216,7 +200,7 @@ export const EXERCISES = [
     majorMuscles: ["Legs"],
     minorMuscles: ["Glutes", "Outer Thigh"],
     example: "fire-hydrant.gif",
-    notes: "",
+
     modifications: "Harder: Place a weight behind your kneecap",
   },
   {
@@ -228,7 +212,6 @@ export const EXERCISES = [
     example: "flutter-kick.gif",
     notes:
       "Her neck looks like its undergoing some serious strain. Feel free to leave yours on the ground.",
-    modifications: "",
   },
   {
     name: "Frogger",
@@ -237,7 +220,7 @@ export const EXERCISES = [
     majorMuscles: ["Full Body"],
     minorMuscles: [],
     example: "frogger.gif",
-    notes: "",
+
     modifications: "Easier: Step Back instead of jumping back\nHarder: Burpee",
   },
   {
@@ -248,7 +231,6 @@ export const EXERCISES = [
     minorMuscles: ["Glutes"],
     example: "glute-bridge.gif",
     notes: "If using weights, place in hip crease",
-    modifications: "",
   },
   {
     name: "Glute Bridge March",
@@ -257,8 +239,6 @@ export const EXERCISES = [
     majorMuscles: ["Legs"],
     minorMuscles: ["Hamstrings"],
     example: "glute-bridge-march.gif",
-    notes: "",
-    modifications: "",
   },
   {
     name: "Goblet Squat",
@@ -267,8 +247,6 @@ export const EXERCISES = [
     majorMuscles: ["Legs"],
     minorMuscles: ["Glutes", "Quads"],
     example: "goblet-squat.jpg",
-    notes: "",
-    modifications: "",
   },
   {
     name: "Halo",
@@ -277,8 +255,6 @@ export const EXERCISES = [
     majorMuscles: ["Arms"],
     minorMuscles: ["Shoulders", "Tricep"],
     example: "halo.gif",
-    notes: "",
-    modifications: "",
   },
   {
     name: "Heart Pump",
@@ -287,8 +263,6 @@ export const EXERCISES = [
     majorMuscles: ["Arms"],
     minorMuscles: ["Bicep", "Chest"],
     example: "heart-pump.gif",
-    notes: "",
-    modifications: "",
   },
   {
     name: "High Knees",
@@ -308,7 +282,7 @@ export const EXERCISES = [
     majorMuscles: ["Legs"],
     minorMuscles: ["Glutes", "Quads"],
     example: "jump-lunges.gif",
-    notes: "",
+
     modifications:
       "Easier: Split Jump, so don't go all the way down into a lunge. Or alternate between regular lunges and lunge jumps",
   },
@@ -319,7 +293,7 @@ export const EXERCISES = [
     majorMuscles: ["Full Body"],
     minorMuscles: [],
     example: "jump-rope.gif",
-    notes: "",
+
     modifications: "Harder: Single Leg",
   },
   {
@@ -329,7 +303,7 @@ export const EXERCISES = [
     majorMuscles: ["Full Body"],
     minorMuscles: [],
     example: "jumping-jack-push-press.gif",
-    notes: "",
+
     modifications: "Easier: Remove the weights, step out instead of jump",
   },
   {
@@ -352,7 +326,6 @@ export const EXERCISES = [
     example: "kettlebell-swing.gif",
     notes:
       'When I do these I usually keep my hand close to my body and let my hips "push" the movement. If you\'d like to experiment, you can use a dumbbell instead',
-    modifications: "",
   },
   {
     name: "Knee Drive",
@@ -361,7 +334,7 @@ export const EXERCISES = [
     majorMuscles: ["Full Body"],
     minorMuscles: [],
     example: "knee-drive.gif",
-    notes: "",
+
     modifications:
       "Harder: Single-leg jump in the air after the knee drive, hold weights",
   },
@@ -372,8 +345,6 @@ export const EXERCISES = [
     majorMuscles: ["Legs"],
     minorMuscles: ["Outer Thigh"],
     example: "lateral-band-walk.gif",
-    notes: "",
-    modifications: "",
   },
   {
     name: "Leg Pull Apart",
@@ -382,8 +353,6 @@ export const EXERCISES = [
     majorMuscles: ["Legs", "Back"],
     minorMuscles: ["Outer Thigh"],
     example: "leg-pull-apart.gif",
-    notes: "",
-    modifications: "",
   },
   {
     name: "Leg Raise",
@@ -393,7 +362,6 @@ export const EXERCISES = [
     minorMuscles: [],
     example: "leg-raise.jpg",
     notes: "Hold onto something heavy",
-    modifications: "",
   },
   {
     name: "Literally Just Jumping",
@@ -404,7 +372,6 @@ export const EXERCISES = [
     example: "literally-just-jumping.gif",
     notes:
       "No good gifs for this, keep core tight, minimize time on the ground and jump up and down.",
-    modifications: "",
   },
   {
     name: "Lying Leg Raises",
@@ -413,8 +380,6 @@ export const EXERCISES = [
     majorMuscles: ["Core"],
     minorMuscles: [],
     example: "lying-leg-raises.gif",
-    notes: "",
-    modifications: "",
   },
   {
     name: "Military Plank",
@@ -423,7 +388,7 @@ export const EXERCISES = [
     majorMuscles: ["Full Body", "Arms"],
     minorMuscles: ["Shoulders"],
     example: "military-plank.gif",
-    notes: "",
+
     modifications: "Easier: Do this from your knees",
   },
   {
@@ -433,7 +398,7 @@ export const EXERCISES = [
     majorMuscles: ["Full Body"],
     minorMuscles: [],
     example: "monkey-jump.gif",
-    notes: "",
+
     modifications:
       'Harder: Do a "literally just jumping" between your monkey jumps',
   },
@@ -444,7 +409,7 @@ export const EXERCISES = [
     majorMuscles: ["Core", "Full Body"],
     minorMuscles: [],
     example: "mountain-climbers.gif",
-    notes: "",
+
     modifications: "Easier: Step in, instead of running your knees",
   },
   {
@@ -454,7 +419,7 @@ export const EXERCISES = [
     majorMuscles: ["Full Body", "Core"],
     minorMuscles: ["Chest"],
     example: "plank.jpg",
-    notes: "",
+
     modifications: "Easier: Go from your knees",
   },
   {
@@ -464,7 +429,7 @@ export const EXERCISES = [
     majorMuscles: ["Full Body", "Core"],
     minorMuscles: [],
     example: "plank-jack.gif",
-    notes: "",
+
     modifications: "Easier: Step out, instead of jumping your knees",
   },
   {
@@ -474,8 +439,6 @@ export const EXERCISES = [
     majorMuscles: ["Full Body", "Back"],
     minorMuscles: [],
     example: "plank-row.gif",
-    notes: "",
-    modifications: "",
   },
   {
     name: "Pushup",
@@ -495,8 +458,6 @@ export const EXERCISES = [
     majorMuscles: ["Arms"],
     minorMuscles: ["Chest"],
     example: "pushup-walk.gif",
-    notes: "",
-    modifications: "",
   },
   {
     name: "Reverse Crunches",
@@ -505,8 +466,6 @@ export const EXERCISES = [
     majorMuscles: ["Core"],
     minorMuscles: [],
     example: "reverse-crunches.gif",
-    notes: "",
-    modifications: "",
   },
   {
     name: "Row",
@@ -516,7 +475,6 @@ export const EXERCISES = [
     minorMuscles: [],
     example: "row.gif",
     notes: "Bar + 15LB",
-    modifications: "",
   },
   {
     name: "Russian Twist",
@@ -525,8 +483,6 @@ export const EXERCISES = [
     majorMuscles: ["Core"],
     minorMuscles: [],
     example: "russian-twist.gif",
-    notes: "",
-    modifications: "",
   },
   {
     name: "Seal Jacks",
@@ -537,7 +493,6 @@ export const EXERCISES = [
     example: "seal-jacks.gif",
     notes:
       "Clap your hands and dance around while you do these. Makes life more fun.",
-    modifications: "",
   },
   {
     name: "Shoulder Press",
@@ -547,7 +502,6 @@ export const EXERCISES = [
     minorMuscles: ["Shoulders"],
     example: "shoulder-press.gif",
     notes: "Bar + 5LB",
-    modifications: "",
   },
   {
     name: "Lateral Raise",
@@ -556,8 +510,6 @@ export const EXERCISES = [
     majorMuscles: ["Arms"],
     minorMuscles: ["Lats"],
     example: "lateral-raise.gif",
-    notes: "",
-    modifications: "",
   },
   {
     name: "Side Lunge",
@@ -566,7 +518,7 @@ export const EXERCISES = [
     majorMuscles: ["Legs"],
     minorMuscles: ["Outer Thigh"],
     example: "side-lunge.gif",
-    notes: "",
+
     modifications: "Easier: no weights",
   },
   {
@@ -576,7 +528,7 @@ export const EXERCISES = [
     majorMuscles: ["Full Body", "Core"],
     minorMuscles: ["Oblique"],
     example: "side-plank.jpg",
-    notes: "",
+
     modifications: "Easier: do the movement from your knees",
   },
   {
@@ -586,7 +538,7 @@ export const EXERCISES = [
     majorMuscles: ["Core"],
     minorMuscles: ["Oblique"],
     example: "side-plank-dips.gif",
-    notes: "",
+
     modifications: "Easier: do the movement from your knees",
   },
   {
@@ -596,7 +548,7 @@ export const EXERCISES = [
     majorMuscles: ["Core"],
     minorMuscles: ["Oblique"],
     example: "side-plank-with-leg-lift.gif",
-    notes: "",
+
     modifications: "Easier: do the movement from your knees",
   },
   {
@@ -607,7 +559,6 @@ export const EXERCISES = [
     minorMuscles: ["Shoulders"],
     example: "single-arm-clean-and-press.gif",
     notes: "Currently using 25LB",
-    modifications: "",
   },
   {
     name: "Single Leg Hip Bridge",
@@ -628,8 +579,6 @@ export const EXERCISES = [
     majorMuscles: ["Legs"],
     minorMuscles: ["Glutes", "Quads"],
     example: "single-leg-squat.gif",
-    notes: "",
-    modifications: "",
   },
   {
     name: "Situp and Throw",
@@ -638,8 +587,6 @@ export const EXERCISES = [
     majorMuscles: ["Core"],
     minorMuscles: [],
     example: "situp-and-throw.jpg",
-    notes: "",
-    modifications: "",
   },
   {
     name: "Skaters",
@@ -659,8 +606,6 @@ export const EXERCISES = [
     majorMuscles: ["Full Body"],
     minorMuscles: [],
     example: "skipping.gif",
-    notes: "",
-    modifications: "",
   },
   {
     name: "Skull Crusher",
@@ -669,8 +614,6 @@ export const EXERCISES = [
     majorMuscles: ["Arms"],
     minorMuscles: ["Tricep"],
     example: "skull-crusher.gif",
-    notes: "",
-    modifications: "",
   },
   {
     name: "Spiderman Pushup",
@@ -679,7 +622,7 @@ export const EXERCISES = [
     majorMuscles: ["Arms", "Core"],
     minorMuscles: ["Chest", "Oblique"],
     example: "spiderman-pushup.gif",
-    notes: "",
+
     modifications:
       "Easier: do a pushup from your knees, and then the spiderman movement",
   },
@@ -713,7 +656,6 @@ export const EXERCISES = [
     minorMuscles: [],
     example: "squat-jumps-180.gif",
     notes: "Turn body 180 while doing squat jump",
-    modifications: "",
   },
   {
     name: "Squat to Lateral Leg Lift",
@@ -722,8 +664,6 @@ export const EXERCISES = [
     majorMuscles: ["Legs"],
     minorMuscles: ["Quads", "Outer Thigh"],
     example: "squat-to-lateral-leg-lift.gif",
-    notes: "",
-    modifications: "",
   },
   {
     name: "Standing Glute Kickbaks",
@@ -732,7 +672,7 @@ export const EXERCISES = [
     majorMuscles: ["Legs"],
     minorMuscles: ["Glutes"],
     example: "standing-glute-kickbaks.gif",
-    notes: "",
+
     modifications: "Easier: do this without the band. Use an",
   },
   {
@@ -742,8 +682,6 @@ export const EXERCISES = [
     majorMuscles: ["Legs"],
     minorMuscles: ["Inner Thigh", "Outer Thigh", "Glutes"],
     example: "standing-leg-lift.jpg",
-    notes: "",
-    modifications: "",
   },
   {
     name: "Standing Oblique Crunch",
@@ -753,7 +691,6 @@ export const EXERCISES = [
     minorMuscles: ["Oblique"],
     example: "standing-oblique-crunch.gif",
     notes: "20LB Weight Minimum",
-    modifications: "",
   },
   {
     name: "Star Jump",
@@ -762,8 +699,6 @@ export const EXERCISES = [
     majorMuscles: ["Full Body"],
     minorMuscles: [],
     example: "star-jump.gif",
-    notes: "",
-    modifications: "",
   },
   {
     name: "Step Up Lunges",
@@ -772,7 +707,7 @@ export const EXERCISES = [
     majorMuscles: ["Legs"],
     minorMuscles: ["Glutes"],
     example: "step-up-lunges.gif",
-    notes: "",
+
     modifications:
       "Easier: Don't hold weights\nHarder: Add a burpee, you can always add a burpee",
   },
@@ -783,8 +718,6 @@ export const EXERCISES = [
     majorMuscles: ["Legs"],
     minorMuscles: ["Glutes"],
     example: "step-back-lunge.gif",
-    notes: "",
-    modifications: "",
   },
   {
     name: "Straightup Situp",
@@ -793,8 +726,6 @@ export const EXERCISES = [
     majorMuscles: ["Core"],
     minorMuscles: [],
     example: "straightup-situp.jpg",
-    notes: "",
-    modifications: "",
   },
   {
     name: "Sumo Squat",
@@ -805,7 +736,6 @@ export const EXERCISES = [
     example: "sumo-squat.gif",
     notes:
       "Bar + 35LB. You want your legs to be just wide enough that your knees still track over your toes",
-    modifications: "",
   },
   {
     name: "Superman",
@@ -814,7 +744,7 @@ export const EXERCISES = [
     majorMuscles: ["Back"],
     minorMuscles: [],
     example: "superman.jpg",
-    notes: "",
+
     modifications:
       "Easier: alternate lifting. Lift your arms from the ground first, then your legs from the ground.",
   },
@@ -825,8 +755,6 @@ export const EXERCISES = [
     majorMuscles: ["Full Body"],
     minorMuscles: [],
     example: "touchdown.gif",
-    notes: "",
-    modifications: "",
   },
   {
     name: "Tricep Dip",
@@ -846,8 +774,6 @@ export const EXERCISES = [
     majorMuscles: ["Arms"],
     minorMuscles: ["Tricep"],
     example: "tricep-kick-back.jpg",
-    notes: "",
-    modifications: "",
   },
   {
     name: "Tricep Overhead Press",
@@ -856,8 +782,6 @@ export const EXERCISES = [
     majorMuscles: ["Arms"],
     minorMuscles: ["Tricep"],
     example: "tricep-overhead-press.gif",
-    notes: "",
-    modifications: "",
   },
   {
     name: "Tuck Jump",
@@ -866,8 +790,6 @@ export const EXERCISES = [
     majorMuscles: ["Full Body"],
     minorMuscles: [],
     example: "tuck-jump.gif",
-    notes: "",
-    modifications: "",
   },
   {
     name: "Twisted Mountain Climbers",
@@ -876,8 +798,6 @@ export const EXERCISES = [
     majorMuscles: ["Full Body", "Core"],
     minorMuscles: ["Oblique"],
     example: "twisted-mountain-climbers.gif",
-    notes: "",
-    modifications: "",
   },
   {
     name: "Wall Ball",
@@ -897,7 +817,7 @@ export const EXERCISES = [
     majorMuscles: ["Full Body"],
     minorMuscles: [],
     example: "weighted-jumping-jacks.jpg",
-    notes: "",
+
     modifications: "Easier: Step out instead of jumping",
   },
   {
@@ -907,7 +827,7 @@ export const EXERCISES = [
     majorMuscles: ["Core"],
     minorMuscles: [],
     example: "weighted-punches.gif",
-    notes: "",
+
     modifications: "Easier: Punch without weights",
   },
   {
@@ -919,7 +839,6 @@ export const EXERCISES = [
     example: "deadbug.gif",
     notes:
       "Really good if you have lower back pain and want to do an ab workout",
-    modifications: "",
   },
 ] as const satisfies Exercise[];
 

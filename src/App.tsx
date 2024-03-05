@@ -8,10 +8,16 @@ import { useSaveSettingsBeforeUnload } from "./features/settings/hooks/useSaveSe
 function App() {
   useSaveSettingsBeforeUnload();
 
-  const { equipmentTypes, exerciseTypes, majorMuscles, minorMuscles } =
-    useSettingsStore();
+  const {
+    exercises,
+    equipmentTypes,
+    exerciseTypes,
+    majorMuscles,
+    minorMuscles,
+  } = useSettingsStore();
 
   const { exercise, refreshRandomExercise } = useRandomExercise({
+    exercises,
     equipmentTypes,
     exerciseTypes,
     majorMuscles,
@@ -31,6 +37,8 @@ function App() {
       {exercise && (
         <img width={500} src={generateImageSrcUrl(exercise.example)} alt="" />
       )}
+      {exercise?.notes && <div>{exercise?.notes}</div>}
+      {exercise?.modifications && <div>{exercise?.modifications}</div>}
     </div>
   );
 }

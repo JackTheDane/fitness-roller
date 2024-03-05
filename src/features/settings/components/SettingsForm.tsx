@@ -1,5 +1,4 @@
 import { ComponentPropsWithoutRef } from "react";
-import { Checkbox } from "../../../components/Checkbox";
 import {
   EQUIPMENT_TYPES,
   EXERCISES,
@@ -11,6 +10,7 @@ import { toggleValueFromArrayByBoolean } from "../../../utils/toggleValueFromArr
 import { useSettingsStore } from "../stores/SettingsStore";
 import { Accordion } from "../../../components/Accordion";
 import styles from "./SettingsForm.module.scss";
+import { CheckBoxList } from "./CheckBoxList";
 
 export type SettingsFormProps = Omit<
   ComponentPropsWithoutRef<"form">,
@@ -32,89 +32,91 @@ export const SettingsForm = ({ ...props }: SettingsFormProps) => {
       <Accordion title="Filters" open>
         <fieldset>
           <legend>Equipment</legend>
-          {EQUIPMENT_TYPES.map((equipmentType) => (
-            <Checkbox
-              label={equipmentType}
-              key={equipmentType}
-              checked={equipmentTypes.includes(equipmentType)}
-              onChange={(newCheckedValue) =>
-                setValues((oldValues) => ({
-                  equipmentTypes: toggleValueFromArrayByBoolean(
-                    oldValues.equipmentTypes,
-                    equipmentType,
-                    newCheckedValue
-                  ),
-                }))
-              }
-            />
-          ))}
+          <CheckBoxList
+            options={EQUIPMENT_TYPES}
+            selectedOptions={equipmentTypes}
+            onOptionCheckedChange={(equipmentType, newCheckedValue) =>
+              setValues((oldValues) => ({
+                equipmentTypes: toggleValueFromArrayByBoolean(
+                  oldValues.equipmentTypes,
+                  equipmentType,
+                  newCheckedValue
+                ),
+              }))
+            }
+          />
         </fieldset>
 
         <fieldset>
           <legend>Exercise types</legend>
-          {EXERCISE_TYPES.map((exerciseType) => (
-            <Checkbox
-              label={exerciseType}
-              key={exerciseType}
-              checked={exerciseTypes.includes(exerciseType)}
-              onChange={(newCheckedValue) =>
-                setValues((oldValues) => ({
-                  exerciseTypes: toggleValueFromArrayByBoolean(
-                    oldValues.exerciseTypes,
-                    exerciseType,
-                    newCheckedValue
-                  ),
-                }))
-              }
-            />
-          ))}
+          <CheckBoxList
+            options={EXERCISE_TYPES}
+            selectedOptions={exerciseTypes}
+            onOptionCheckedChange={(exerciseType, newCheckedValue) =>
+              setValues((oldValues) => ({
+                exerciseTypes: toggleValueFromArrayByBoolean(
+                  oldValues.exerciseTypes,
+                  exerciseType,
+                  newCheckedValue
+                ),
+              }))
+            }
+          />
         </fieldset>
 
         <fieldset>
           <legend>Major muscles</legend>
-          {MAJOR_MUSCLES.map((majorMuscle) => (
-            <Checkbox
-              label={majorMuscle}
-              key={majorMuscle}
-              checked={majorMuscles.includes(majorMuscle)}
-              onChange={(newCheckedValue) =>
-                setValues((oldValues) => ({
-                  majorMuscles: toggleValueFromArrayByBoolean(
-                    oldValues.majorMuscles,
-                    majorMuscle,
-                    newCheckedValue
-                  ),
-                }))
-              }
-            />
-          ))}
+          <CheckBoxList
+            options={MAJOR_MUSCLES}
+            selectedOptions={majorMuscles}
+            onOptionCheckedChange={(majorMuscle, newCheckedValue) =>
+              setValues((oldValues) => ({
+                majorMuscles: toggleValueFromArrayByBoolean(
+                  oldValues.majorMuscles,
+                  majorMuscle,
+                  newCheckedValue
+                ),
+              }))
+            }
+          />
         </fieldset>
 
         <fieldset>
           <legend>Minor muscles</legend>
-          {MINOR_MUSCLES.map((minorMuscle) => (
-            <Checkbox
-              label={minorMuscle}
-              key={minorMuscle}
-              checked={minorMuscles.includes(minorMuscle)}
-              onChange={(newCheckedValue) =>
-                setValues((oldValues) => ({
-                  minorMuscles: toggleValueFromArrayByBoolean(
-                    oldValues.minorMuscles,
-                    minorMuscle,
-                    newCheckedValue
-                  ),
-                }))
-              }
-            />
-          ))}
+          <CheckBoxList
+            options={MINOR_MUSCLES}
+            selectedOptions={minorMuscles}
+            onOptionCheckedChange={(minorMuscle, newCheckedValue) =>
+              setValues((oldValues) => ({
+                minorMuscles: toggleValueFromArrayByBoolean(
+                  oldValues.minorMuscles,
+                  minorMuscle,
+                  newCheckedValue
+                ),
+              }))
+            }
+          />
         </fieldset>
       </Accordion>
 
       <Accordion title="Available exercises">
         <fieldset>
           <legend>Exercises</legend>
-          {EXERCISES.map((exercise) => (
+          <CheckBoxList
+            options={EXERCISES}
+            selectedOptions={exercises as typeof EXERCISES}
+            getLabel={({ name }) => name}
+            onOptionCheckedChange={(exercise, newCheckedValue) =>
+              setValues((oldValues) => ({
+                exercises: toggleValueFromArrayByBoolean(
+                  oldValues.exercises,
+                  exercise,
+                  newCheckedValue
+                ),
+              }))
+            }
+          />
+          {/* {EXERCISES.map((exercise) => (
             <Checkbox
               label={exercise.name}
               key={exercise.name}
@@ -129,7 +131,7 @@ export const SettingsForm = ({ ...props }: SettingsFormProps) => {
                 }))
               }
             />
-          ))}
+          ))} */}
         </fieldset>
       </Accordion>
     </form>
