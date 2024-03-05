@@ -11,6 +11,8 @@ import { useSettingsStore } from "../stores/SettingsStore";
 import { Accordion } from "../../../components/Accordion";
 import styles from "./SettingsForm.module.scss";
 import { CheckBoxList } from "./CheckBoxList";
+import { Badge } from "../../../components/Badge";
+import { EXERCISE_BADGE_COLORS } from "../../exercises/constants";
 
 export type SettingsFormProps = Omit<
   ComponentPropsWithoutRef<"form">,
@@ -31,7 +33,9 @@ export const SettingsForm = ({ ...props }: SettingsFormProps) => {
     <form {...props} className={styles.form}>
       <Accordion title="Filters" open>
         <fieldset>
-          <legend>Equipment</legend>
+          <Badge as="legend" color={EXERCISE_BADGE_COLORS.equipmentTypes}>
+            Equipment
+          </Badge>
           <CheckBoxList
             options={EQUIPMENT_TYPES}
             selectedOptions={equipmentTypes}
@@ -48,7 +52,9 @@ export const SettingsForm = ({ ...props }: SettingsFormProps) => {
         </fieldset>
 
         <fieldset>
-          <legend>Exercise types</legend>
+          <Badge as="legend" color={EXERCISE_BADGE_COLORS.exerciseTypes}>
+            Exercise types
+          </Badge>
           <CheckBoxList
             options={EXERCISE_TYPES}
             selectedOptions={exerciseTypes}
@@ -65,7 +71,9 @@ export const SettingsForm = ({ ...props }: SettingsFormProps) => {
         </fieldset>
 
         <fieldset>
-          <legend>Major muscles</legend>
+          <Badge as="legend" color={EXERCISE_BADGE_COLORS.majorMuscles}>
+            Major muscles
+          </Badge>
           <CheckBoxList
             options={MAJOR_MUSCLES}
             selectedOptions={majorMuscles}
@@ -82,7 +90,9 @@ export const SettingsForm = ({ ...props }: SettingsFormProps) => {
         </fieldset>
 
         <fieldset>
-          <legend>Minor muscles</legend>
+          <Badge as="legend" color={EXERCISE_BADGE_COLORS.minorMuscles}>
+            Minor muscles
+          </Badge>
           <CheckBoxList
             options={MINOR_MUSCLES}
             selectedOptions={minorMuscles}

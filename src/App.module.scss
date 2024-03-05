@@ -3,26 +3,22 @@
   flex-direction: column;
   gap: 16px;
   min-height: 100svh;
-  min-width: 100svw;
-  position: relative;
-  justify-content: center;
+  width: 100svw;
+  max-width: 100%;
   align-items: center;
+  justify-content: flex-start;
 }
 
 .toolbar {
   display: flex;
-  justify-content: flex-end;
-  margin-bottom: auto;
-  padding: 16px;
-  position: absolute;
-  inset-inline-end: 8px;
-  inset-block-start: 8px;
-  z-index: 10;
+  flex-direction: column;
+  margin-block-end: 40px;
   width: 100%;
+  gap: 8px;
 }
 
 .rerollButton {
-  margin-right: 8px;
+  width: 100%;
 }
 
 .badges {

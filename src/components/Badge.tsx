@@ -1,15 +1,23 @@
-import { CSSProperties, ReactNode } from "react";
+import { CSSProperties, ReactHTML, ReactNode, createElement } from "react";
 import styles from "./Badge.module.scss";
+import { combineClasses } from "../utils/combineClasses";
 
 type BadgeProps = {
-  children?: ReactNode;
+  as?: keyof ReactHTML;
   color?: CSSProperties["backgroundColor"];
+  children?: ReactNode;
+  className?: string;
 };
 
-export const Badge = ({ children, color = "grey" }: BadgeProps) => {
-  return (
-    <span className={styles.badge} style={{ backgroundColor: color }}>
-      {children}
-    </span>
-  );
+export const Badge = ({
+  as = "span",
+  color = "grey",
+  children,
+  className,
+}: BadgeProps) => {
+  return createElement(as, {
+    className: combineClasses(className, styles.badge),
+    style: { backgroundColor: color },
+    children,
+  });
 };
