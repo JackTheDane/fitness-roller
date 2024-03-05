@@ -10,6 +10,7 @@ import { EXERCISES } from "../data/exercises";
 import { getRandomNumberBetween } from "../utils/getRandomNumberBetween";
 
 type RandomExerciseOptions = {
+  exercises?: Exercise[];
   equipmentTypes?: EquipmentType[];
   exerciseTypes?: ExerciseType[];
   majorMuscles?: MajorMuscle[];
@@ -20,9 +21,11 @@ const getRandomExercise = (
   currentExercise?: Exercise,
   options?: RandomExerciseOptions
 ) => {
+  const exercisePool = (options?.exercises ?? EXERCISES) as typeof EXERCISES;
+
   let availableExercises = currentExercise
-    ? EXERCISES.filter(({ name }) => name !== currentExercise.name)
-    : EXERCISES;
+    ? exercisePool.filter(({ name }) => name !== currentExercise.name)
+    : exercisePool;
 
   if (options?.equipmentTypes) {
     availableExercises = availableExercises.filter(({ equipmentTypes }) =>
