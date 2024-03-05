@@ -1,0 +1,29 @@
+.checkbox {
+  display: flex;
+  transition: background-color 0.2s;
+  padding: 2px 4px;
+  margin-inline-start: -2px;
+  margin-inline-end: -2px;
+  gap: 4px;
+  user-select: none;
+
+  &,
+  input {
+    cursor: pointer;
+  }
+
+  &:not(:has(input[disabled])) {
+    &:hover {
+      background-color: rgba($color: #fff, $alpha: 0.3);
+    }
+  }
+
+  &:has(input[disabled]) {
+    color: gray;
+
+    &,
+    input {
+      cursor: not-allowed;
+    }
+  }
+}

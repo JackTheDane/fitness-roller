@@ -1,0 +1,26 @@
+.app {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  min-height: 100svh;
+  min-width: 100svw;
+  position: relative;
+  justify-content: center;
+  align-items: center;
+}
+
+.toolbar {
+  display: flex;
+  justify-content: flex-end;
+  margin-bottom: auto;
+  padding: 16px;
+  position: absolute;
+  inset-inline-end: 8px;
+  inset-block-start: 8px;
+  z-index: 10;
+  width: 100%;
+}
+
+.rerollButton {
+  margin-right: 8px;
+}

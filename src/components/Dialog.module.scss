@@ -1,0 +1,19 @@
+.dialog {
+  max-height: 90svh;
+}
+
+.content {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.header {
+  display: grid;
+  align-items: center;
+}
+
+.closeButton {
+  justify-self: flex-end;
+  background-color: transparent;
+}

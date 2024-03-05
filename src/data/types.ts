@@ -1,8 +1,18 @@
 import type { EXERCISES } from "./exercises";
 
-export type Exercise = (typeof EXERCISES)[number];
+export type Exercise = {
+  name: string;
+  equipmentTypes: string[];
+  exerciseTypes: string[];
+  majorMuscles: string[];
+  minorMuscles: string[];
+  example: string;
+  notes?: string;
+  modifications?: string;
+};
 
-export type Equipment = Exercise["equipment"][number];
-export type ExerciseType = Exercise["exerciseType"][number];
-export type MajorMuscle = Exercise["majorMuscle"][number];
-export type MinorMuscle = Exercise["minorMuscle"][number];
+export type EquipmentType =
+  (typeof EXERCISES)[number]["equipmentTypes"][number];
+export type ExerciseType = (typeof EXERCISES)[number]["exerciseTypes"][number];
+export type MajorMuscle = (typeof EXERCISES)[number]["majorMuscles"][number];
+export type MinorMuscle = (typeof EXERCISES)[number]["minorMuscles"][number];

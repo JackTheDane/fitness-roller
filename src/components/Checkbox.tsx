@@ -1,4 +1,5 @@
 import { ComponentProps, useId } from "react";
+import styles from "./Checkbox.module.scss";
 
 type CheckboxProps = Omit<
   ComponentProps<"input">,
@@ -12,8 +13,7 @@ export const Checkbox = ({ label, onChange, ...props }: CheckboxProps) => {
   const id = useId();
 
   return (
-    <div>
-      <label htmlFor={id}>{label}</label>
+    <label className={styles.checkbox} htmlFor={id}>
       <input
         type="checkbox"
         id={id}
@@ -22,6 +22,7 @@ export const Checkbox = ({ label, onChange, ...props }: CheckboxProps) => {
         }}
         {...props}
       />
-    </div>
+      <span>{label}</span>
+    </label>
   );
 };
