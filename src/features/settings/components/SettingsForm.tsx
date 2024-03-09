@@ -126,22 +126,6 @@ export const SettingsForm = ({ ...props }: SettingsFormProps) => {
               }))
             }
           />
-          {/* {EXERCISES.map((exercise) => (
-            <Checkbox
-              label={exercise.name}
-              key={exercise.name}
-              checked={exercises.includes(exercise)}
-              onChange={(newCheckedValue) =>
-                setValues((oldValues) => ({
-                  exercises: toggleValueFromArrayByBoolean(
-                    oldValues.exercises,
-                    exercise,
-                    newCheckedValue
-                  ),
-                }))
-              }
-            />
-          ))} */}
         </fieldset>
       </Accordion>
     </form>

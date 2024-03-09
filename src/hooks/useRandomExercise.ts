@@ -29,7 +29,7 @@ const getRandomExercise = (
 
   if (options?.equipmentTypes) {
     availableExercises = availableExercises.filter(({ equipmentTypes }) =>
-      equipmentTypes.some((equipment) =>
+      equipmentTypes.every((equipment) =>
         options.equipmentTypes!.includes(equipment)
       )
     );
@@ -37,7 +37,7 @@ const getRandomExercise = (
 
   if (options?.exerciseTypes) {
     availableExercises = availableExercises.filter(({ exerciseTypes }) =>
-      exerciseTypes.some((exerciseType) =>
+      exerciseTypes.every((exerciseType) =>
         options.exerciseTypes!.includes(exerciseType)
       )
     );
@@ -45,7 +45,7 @@ const getRandomExercise = (
 
   if (options?.majorMuscles) {
     availableExercises = availableExercises.filter(({ majorMuscles }) =>
-      majorMuscles.some((majorMuscle) =>
+      majorMuscles.every((majorMuscle) =>
         options.majorMuscles!.includes(majorMuscle)
       )
     );
@@ -53,7 +53,7 @@ const getRandomExercise = (
 
   if (options?.minorMuscles) {
     availableExercises = availableExercises.filter(({ minorMuscles }) =>
-      minorMuscles.some((minorMuscle) =>
+      minorMuscles.every((minorMuscle) =>
         options.minorMuscles!.includes(minorMuscle)
       )
     );
