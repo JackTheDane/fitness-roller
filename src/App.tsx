@@ -1,5 +1,5 @@
 import styles from "./App.module.scss";
-import { useRandomExercise } from "./hooks/useRandomExercise";
+// import { useRandomExercise } from "./features/exercises/hooks/useRandomExercise";
 import { generateImageSrcUrl } from "./utils/generateImageSrcUrl";
 import { useSettingsStore } from "./features/settings/stores/SettingsStore";
 import { SettingsDialogButton } from "./features/settings/components/SettingsDialogButton";
@@ -7,6 +7,7 @@ import { useSaveSettingsBeforeUnload } from "./features/settings/hooks/useSaveSe
 import { Badge } from "./components/Badge";
 import { EXERCISE_BADGE_COLORS } from "./features/exercises/constants";
 import { ExerciseExampleImage } from "./features/exercises/components/ExerciseExampleImage";
+import { useExerciseRoulette } from "./features/exercises/hooks/useExerciseRoulette";
 
 function App() {
   useSaveSettingsBeforeUnload();
@@ -19,13 +20,15 @@ function App() {
     minorMuscles,
   } = useSettingsStore();
 
-  const { exercise, refreshRandomExercise } = useRandomExercise({
-    exercises,
-    equipmentTypes,
-    exerciseTypes,
-    majorMuscles,
-    minorMuscles,
-  });
+  const { exercise, isRefreshing, refreshRandomExercise } = useExerciseRoulette(
+    {
+      exercises,
+      equipmentTypes,
+      exerciseTypes,
+      majorMuscles,
+      minorMuscles,
+    }
+  );
 
   return (
     <div className={styles.app}>
@@ -44,42 +47,46 @@ function App() {
             src={generateImageSrcUrl(exercise.example)}
             alt=""
           />
-          <div className={styles.badges}>
-            {exercise.equipmentTypes.map((equipmentType) => (
-              <Badge
-                color={EXERCISE_BADGE_COLORS.equipmentTypes}
-                key={equipmentType}
-              >
-                {equipmentType}
-              </Badge>
-            ))}
-            {exercise.exerciseTypes.map((exerciseType) => (
-              <Badge
-                color={EXERCISE_BADGE_COLORS.exerciseTypes}
-                key={exerciseType}
-              >
-                {exerciseType}
-              </Badge>
-            ))}
-            {exercise.majorMuscles.map((majorMuscle) => (
-              <Badge
-                color={EXERCISE_BADGE_COLORS.majorMuscles}
-                key={majorMuscle}
-              >
-                {majorMuscle}
-              </Badge>
-            ))}
-            {exercise.minorMuscles.map((minorMuscle) => (
-              <Badge
-                color={EXERCISE_BADGE_COLORS.minorMuscles}
-                key={minorMuscle}
-              >
-                {minorMuscle}
-              </Badge>
-            ))}
-          </div>
-          {exercise.notes && <div>{exercise.notes}</div>}
-          {exercise.modifications && <div>{exercise.modifications}</div>}
+          {!isRefreshing && (
+            <div className={styles.exerciseInformation}>
+              <div className={styles.badges}>
+                {exercise.equipmentTypes.map((equipmentType) => (
+                  <Badge
+                    color={EXERCISE_BADGE_COLORS.equipmentTypes}
+                    key={equipmentType}
+                  >
+                    {equipmentType}
+                  </Badge>
+                ))}
+                {exercise.exerciseTypes.map((exerciseType) => (
+                  <Badge
+                    color={EXERCISE_BADGE_COLORS.exerciseTypes}
+                    key={exerciseType}
+                  >
+                    {exerciseType}
+                  </Badge>
+                ))}
+                {exercise.majorMuscles.map((majorMuscle) => (
+                  <Badge
+                    color={EXERCISE_BADGE_COLORS.majorMuscles}
+                    key={majorMuscle}
+                  >
+                    {majorMuscle}
+                  </Badge>
+                ))}
+                {exercise.minorMuscles.map((minorMuscle) => (
+                  <Badge
+                    color={EXERCISE_BADGE_COLORS.minorMuscles}
+                    key={minorMuscle}
+                  >
+                    {minorMuscle}
+                  </Badge>
+                ))}
+              </div>
+              {exercise.notes && <div>{exercise.notes}</div>}
+              {exercise.modifications && <div>{exercise.modifications}</div>}
+            </div>
+          )}
         </>
       )}
     </div>

@@ -5,9 +5,9 @@ import {
   ExerciseType,
   MajorMuscle,
   MinorMuscle,
-} from "../data/types";
-import { EXERCISES } from "../data/exercises";
-import { getRandomNumberBetween } from "../utils/getRandomNumberBetween";
+} from "../../../data/types";
+import { EXERCISES } from "../../../data/exercises";
+import { getRandomNumberBetween } from "../../../utils/getRandomNumberBetween";
 
 type RandomExerciseOptions = {
   exercises?: Exercise[];
