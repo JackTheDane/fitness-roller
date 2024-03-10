@@ -9,7 +9,7 @@ import {
 import { EXERCISES } from "../../../data/exercises";
 import { getRandomNumberBetween } from "../../../utils/getRandomNumberBetween";
 
-type RandomExerciseOptions = {
+export type RandomExerciseOptions = {
   exercises?: Exercise[];
   equipmentTypes?: EquipmentType[];
   exerciseTypes?: ExerciseType[];
