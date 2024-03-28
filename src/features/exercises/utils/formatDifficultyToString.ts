@@ -4,9 +4,13 @@ export const formatDifficultyToString = (
   difficulty: Difficulty,
   difficultyLevel: DifficultyLevel
 ) => {
-  const chosenDifficulty = difficulty[difficultyLevel];
+  const { reps, time, sets, rest } = difficulty[difficultyLevel];
 
-  return `Reps: ${chosenDifficulty.reps || chosenDifficulty.time}, Sets: ${
-    chosenDifficulty.sets
-  }, Rest: ${chosenDifficulty.rest}`;
+  return [
+    `${reps ? `Reps: ${reps}` : time ? `Time: ${time}` : ""}`,
+    `Sets: ${sets}`,
+    `Rest: ${rest}`,
+  ]
+    .filter(Boolean)
+    .join(", ");
 };

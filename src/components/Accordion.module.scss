@@ -5,13 +5,28 @@
 }
 
 .toggleButton {
+  display: flex;
   cursor: pointer;
   user-select: none;
   transition: background-color 0.2s;
   padding: 4px;
   margin-inline-start: -4px;
+  width: 100%;
+  background-color: transparent;
+  text-align: left;
+  padding: 8px;
+  gap: 4px;
 
   &:hover {
     background-color: rgba($color: #fff, $alpha: 0.3);
+  }
+}
+
+.chevron {
+  transition: rotate 300ms;
+  rotate: 0deg;
+
+  &.open {
+    rotate: 180deg;
   }
 }
