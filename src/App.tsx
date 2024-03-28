@@ -11,6 +11,7 @@ import { useExerciseRoulette } from "./features/exercises/hooks/useExerciseRoule
 import { DifficultyLevelsInformation } from "./features/exercises/components/DifficultyLevelsInformation";
 import { Collapsible } from "./features/animations/Collapsible";
 import { ExerciseLabel } from "./features/exercises/components/ExerciseLabel";
+import { Separator } from "./components/Separator";
 
 function App() {
   useSaveSettingsBeforeUnload();
@@ -60,6 +61,20 @@ function App() {
           <ExerciseLabel animate={!isRefreshing}>{exercise.name}</ExerciseLabel>
           <Collapsible delay={{ open: 500 }} open={!isRefreshing}>
             <div className={styles.exerciseInformation}>
+              <Separator />
+              <DifficultyLevelsInformation exercise={exercise} />
+              {exercise.notes && (
+                <div>
+                  <b>Notes</b>
+                  <p style={{ marginTop: 0 }}>{exercise.notes}</p>
+                </div>
+              )}
+              {exercise.modifications && (
+                <div>
+                  <b>Modifications</b>
+                  <p style={{ marginTop: 0 }}>{exercise.modifications}</p>
+                </div>
+              )}
               <div className={styles.badges}>
                 {exercise.equipmentTypes.map((equipmentType) => (
                   <Badge
@@ -94,19 +109,6 @@ function App() {
                   </Badge>
                 ))}
               </div>
-              <DifficultyLevelsInformation exercise={exercise} />
-              {exercise.notes && (
-                <div>
-                  <b>Notes</b>
-                  <p style={{ marginTop: 0 }}>{exercise.notes}</p>
-                </div>
-              )}
-              {exercise.modifications && (
-                <div>
-                  <b>Modifications</b>
-                  <p style={{ marginTop: 0 }}>{exercise.modifications}</p>
-                </div>
-              )}
             </div>
           </Collapsible>
         </div>
