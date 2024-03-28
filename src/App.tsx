@@ -10,6 +10,7 @@ import { ExerciseExampleImage } from "./features/exercises/components/ExerciseEx
 import { useExerciseRoulette } from "./features/exercises/hooks/useExerciseRoulette";
 import { DifficultyLevelsInformation } from "./features/exercises/components/DifficultyLevelsInformation";
 import { Collapsible } from "./features/animations/Collapsible";
+import { ExerciseLabel } from "./features/exercises/components/ExerciseLabel";
 
 function App() {
   useSaveSettingsBeforeUnload();
@@ -56,13 +57,7 @@ function App() {
             src={generateImageSrcUrl(exercise.example)}
             loading={isRefreshing}
           />
-          <b
-            style={{
-              fontSize: 20,
-            }}
-          >
-            {exercise.name}
-          </b>
+          <ExerciseLabel animate={!isRefreshing}>{exercise.name}</ExerciseLabel>
           <Collapsible delay={{ open: 500 }} open={!isRefreshing}>
             <div className={styles.exerciseInformation}>
               <div className={styles.badges}>
