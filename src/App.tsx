@@ -9,6 +9,7 @@ import { EXERCISE_BADGE_COLORS } from "./features/exercises/constants";
 import { ExerciseExampleImage } from "./features/exercises/components/ExerciseExampleImage";
 import { useExerciseRoulette } from "./features/exercises/hooks/useExerciseRoulette";
 import { DifficultyLevelsInformation } from "./features/exercises/components/DifficultyLevelsInformation";
+import { Collapsible } from "./features/animations/Collapsible";
 
 function App() {
   useSaveSettingsBeforeUnload();
@@ -62,7 +63,7 @@ function App() {
           >
             {exercise.name}
           </b>
-          {!isRefreshing && (
+          <Collapsible delay={{ open: 500 }} open={!isRefreshing}>
             <div className={styles.exerciseInformation}>
               <div className={styles.badges}>
                 {exercise.equipmentTypes.map((equipmentType) => (
@@ -112,7 +113,7 @@ function App() {
                 </div>
               )}
             </div>
-          )}
+          </Collapsible>
         </div>
       )}
     </div>
