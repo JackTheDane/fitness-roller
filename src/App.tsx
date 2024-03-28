@@ -8,6 +8,7 @@ import { Badge } from "./components/Badge";
 import { EXERCISE_BADGE_COLORS } from "./features/exercises/constants";
 import { ExerciseExampleImage } from "./features/exercises/components/ExerciseExampleImage";
 import { useExerciseRoulette } from "./features/exercises/hooks/useExerciseRoulette";
+import { DifficultyLevelsInformation } from "./features/exercises/components/DifficultyLevelsInformation";
 
 function App() {
   useSaveSettingsBeforeUnload();
@@ -40,13 +41,27 @@ function App() {
           🎲 Reroll
         </button>
       </div>
-      {exercise?.name ?? "No exercise..."}
+      {!exercise && "No exercise..."}
       {exercise && (
-        <>
+        <div
+          style={{
+            display: "flex",
+            flexDirection: "column",
+            gap: 12,
+            textAlign: "center",
+          }}
+        >
           <ExerciseExampleImage
             src={generateImageSrcUrl(exercise.example)}
-            alt=""
+            loading={isRefreshing}
           />
+          <b
+            style={{
+              fontSize: 20,
+            }}
+          >
+            {exercise.name}
+          </b>
           {!isRefreshing && (
             <div className={styles.exerciseInformation}>
               <div className={styles.badges}>
@@ -83,11 +98,22 @@ function App() {
                   </Badge>
                 ))}
               </div>
-              {exercise.notes && <div>{exercise.notes}</div>}
-              {exercise.modifications && <div>{exercise.modifications}</div>}
+              <DifficultyLevelsInformation exercise={exercise} />
+              {exercise.notes && (
+                <div>
+                  <b>Notes</b>
+                  <p style={{ marginTop: 0 }}>{exercise.notes}</p>
+                </div>
+              )}
+              {exercise.modifications && (
+                <div>
+                  <b>Modifications</b>
+                  <p style={{ marginTop: 0 }}>{exercise.modifications}</p>
+                </div>
+              )}
             </div>
           )}
-        </>
+        </div>
       )}
     </div>
   );

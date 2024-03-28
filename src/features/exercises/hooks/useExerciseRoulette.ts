@@ -2,7 +2,7 @@ import { useState } from "react";
 import { sleep } from "../../../utils/sleep";
 import { RandomExerciseOptions, useRandomExercise } from "./useRandomExercise";
 
-const ROULETTE_TIMINGS = [50, 50, 70, 70, 100, 150, 200, 300, 400, 500, 500];
+const ROULETTE_TIMINGS = Array.from({ length: 30 }, () => 50);
 
 const runExerciseRoulette = async (callback: () => void) => {
   for await (const timing of ROULETTE_TIMINGS) {
@@ -19,6 +19,7 @@ export const useExerciseRoulette = (options?: RandomExerciseOptions) => {
 
   const refreshRandomExercise = () => {
     setIsRefreshing(true);
+
     runExerciseRoulette(_refreshRandomExercise)
       .catch((error) => {
         window.alert("Exercise roulette failed - Check console");

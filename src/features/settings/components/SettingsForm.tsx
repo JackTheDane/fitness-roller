@@ -10,7 +10,7 @@ import { toggleValueFromArrayByBoolean } from "../../../utils/toggleValueFromArr
 import { useSettingsStore } from "../stores/SettingsStore";
 import { Accordion } from "../../../components/Accordion";
 import styles from "./SettingsForm.module.scss";
-import { CheckBoxList } from "./CheckBoxList";
+import { CheckBoxList } from "../../../components/CheckBoxList";
 import { Badge } from "../../../components/Badge";
 import { EXERCISE_BADGE_COLORS } from "../../exercises/constants";
 
@@ -32,81 +32,83 @@ export const SettingsForm = ({ ...props }: SettingsFormProps) => {
   return (
     <form {...props} className={styles.form}>
       <Accordion title="Filters" open>
-        <fieldset>
-          <Badge as="legend" color={EXERCISE_BADGE_COLORS.equipmentTypes}>
-            Equipment
-          </Badge>
-          <CheckBoxList
-            options={EQUIPMENT_TYPES}
-            selectedOptions={equipmentTypes}
-            onOptionCheckedChange={(equipmentType, newCheckedValue) =>
-              setValues((oldValues) => ({
-                equipmentTypes: toggleValueFromArrayByBoolean(
-                  oldValues.equipmentTypes,
-                  equipmentType,
-                  newCheckedValue
-                ),
-              }))
-            }
-          />
-        </fieldset>
+        <div className={styles.filtersSection}>
+          <fieldset>
+            <Badge as="legend" color={EXERCISE_BADGE_COLORS.equipmentTypes}>
+              Equipment
+            </Badge>
+            <CheckBoxList
+              options={EQUIPMENT_TYPES}
+              selectedOptions={equipmentTypes}
+              onOptionCheckedChange={(equipmentType, newCheckedValue) =>
+                setValues((oldValues) => ({
+                  equipmentTypes: toggleValueFromArrayByBoolean(
+                    oldValues.equipmentTypes,
+                    equipmentType,
+                    newCheckedValue
+                  ),
+                }))
+              }
+            />
+          </fieldset>
 
-        <fieldset>
-          <Badge as="legend" color={EXERCISE_BADGE_COLORS.exerciseTypes}>
-            Exercise types
-          </Badge>
-          <CheckBoxList
-            options={EXERCISE_TYPES}
-            selectedOptions={exerciseTypes}
-            onOptionCheckedChange={(exerciseType, newCheckedValue) =>
-              setValues((oldValues) => ({
-                exerciseTypes: toggleValueFromArrayByBoolean(
-                  oldValues.exerciseTypes,
-                  exerciseType,
-                  newCheckedValue
-                ),
-              }))
-            }
-          />
-        </fieldset>
+          <fieldset>
+            <Badge as="legend" color={EXERCISE_BADGE_COLORS.exerciseTypes}>
+              Exercise types
+            </Badge>
+            <CheckBoxList
+              options={EXERCISE_TYPES}
+              selectedOptions={exerciseTypes}
+              onOptionCheckedChange={(exerciseType, newCheckedValue) =>
+                setValues((oldValues) => ({
+                  exerciseTypes: toggleValueFromArrayByBoolean(
+                    oldValues.exerciseTypes,
+                    exerciseType,
+                    newCheckedValue
+                  ),
+                }))
+              }
+            />
+          </fieldset>
 
-        <fieldset>
-          <Badge as="legend" color={EXERCISE_BADGE_COLORS.majorMuscles}>
-            Major muscles
-          </Badge>
-          <CheckBoxList
-            options={MAJOR_MUSCLES}
-            selectedOptions={majorMuscles}
-            onOptionCheckedChange={(majorMuscle, newCheckedValue) =>
-              setValues((oldValues) => ({
-                majorMuscles: toggleValueFromArrayByBoolean(
-                  oldValues.majorMuscles,
-                  majorMuscle,
-                  newCheckedValue
-                ),
-              }))
-            }
-          />
-        </fieldset>
+          <fieldset>
+            <Badge as="legend" color={EXERCISE_BADGE_COLORS.majorMuscles}>
+              Major muscles
+            </Badge>
+            <CheckBoxList
+              options={MAJOR_MUSCLES}
+              selectedOptions={majorMuscles}
+              onOptionCheckedChange={(majorMuscle, newCheckedValue) =>
+                setValues((oldValues) => ({
+                  majorMuscles: toggleValueFromArrayByBoolean(
+                    oldValues.majorMuscles,
+                    majorMuscle,
+                    newCheckedValue
+                  ),
+                }))
+              }
+            />
+          </fieldset>
 
-        <fieldset>
-          <Badge as="legend" color={EXERCISE_BADGE_COLORS.minorMuscles}>
-            Minor muscles
-          </Badge>
-          <CheckBoxList
-            options={MINOR_MUSCLES}
-            selectedOptions={minorMuscles}
-            onOptionCheckedChange={(minorMuscle, newCheckedValue) =>
-              setValues((oldValues) => ({
-                minorMuscles: toggleValueFromArrayByBoolean(
-                  oldValues.minorMuscles,
-                  minorMuscle,
-                  newCheckedValue
-                ),
-              }))
-            }
-          />
-        </fieldset>
+          <fieldset>
+            <Badge as="legend" color={EXERCISE_BADGE_COLORS.minorMuscles}>
+              Minor muscles
+            </Badge>
+            <CheckBoxList
+              options={MINOR_MUSCLES}
+              selectedOptions={minorMuscles}
+              onOptionCheckedChange={(minorMuscle, newCheckedValue) =>
+                setValues((oldValues) => ({
+                  minorMuscles: toggleValueFromArrayByBoolean(
+                    oldValues.minorMuscles,
+                    minorMuscle,
+                    newCheckedValue
+                  ),
+                }))
+              }
+            />
+          </fieldset>
+        </div>
       </Accordion>
 
       <Accordion title="Available exercises">

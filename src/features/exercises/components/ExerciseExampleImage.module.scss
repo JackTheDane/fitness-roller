@@ -5,8 +5,8 @@
   max-height: min(80svh, 300px);
   display: flex;
   align-items: center;
+  justify-content: center;
   flex-direction: column;
-  background: rgba($color: #000000, $alpha: 0.2);
   overflow: hidden;
   border-radius: 10px;
 }
@@ -15,9 +15,4 @@
   max-width: 100%;
   height: 100%;
   object-fit: contain;
-}
-
-@keyframes exercise-image-flip {
-  0% {
-  }
 }

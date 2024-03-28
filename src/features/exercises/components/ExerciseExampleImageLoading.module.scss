@@ -1,15 +1,14 @@
-.imageLoader {
-  animation: image-loader-shimmer ease-in-out 1s infinite both alternate;
-  height: 100%;
-  width: 100%;
+.spinner {
+  animation: spin 1s linear infinite both;
+  font-size: 60px;
 }
 
-@keyframes image-loader-shimmer {
+@keyframes spin {
   from {
-    background-color: rgba($color: #000000, $alpha: 0.2);
+    rotate: 0deg;
   }
 
   to {
-    background-color: rgba($color: #000000, $alpha: 0.3);
+    rotate: 360deg;
   }
 }

@@ -1,5 +1,5 @@
 import { useMemo } from "react";
-import { Checkbox } from "../../../components/Checkbox";
+import { Checkbox } from "./Checkbox";
 
 export type CheckBoxListProps<Option> = {
   options: Option[];
