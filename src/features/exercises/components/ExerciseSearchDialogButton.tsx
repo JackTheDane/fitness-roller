@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useId, useState } from "react";
 import { Dialog } from "../../../components/Dialog";
 import styles from "./ExerciseSearchDialogButton.module.scss";
 import { Exercise } from "../../../data/types";
@@ -18,6 +18,8 @@ export const ExerciseSearchDialogButton = ({
   const [isDialogOpen, setIsDialogOpen] = useState(false);
   const [searchFilter, setSearchFilter] = useState("");
 
+  const resultsSectionId = useId();
+
   const lowerCaseSearchFilter = searchFilter.toLowerCase();
 
   const filteredExercises = EXERCISES.filter(({ name }) =>
@@ -29,17 +31,27 @@ export const ExerciseSearchDialogButton = ({
       <button title="Search for exercise" onClick={() => setIsDialogOpen(true)}>
         🔍
       </button>
-      <Dialog open={isDialogOpen} onClose={() => setIsDialogOpen(false)}>
-        <TextInput
-          autoFocus
-          placeholder="Type to search"
-          label="🔍 Search for exercise"
-          value={searchFilter}
-          onChange={setSearchFilter}
-        />
+      <Dialog
+        open={isDialogOpen}
+        onClose={() => {
+          setIsDialogOpen(false);
+          setSearchFilter("");
+        }}
+      >
+        <Dialog.Header>
+          <TextInput
+            autoFocus
+            placeholder="Type to search"
+            label="🔍 Search for exercise"
+            value={searchFilter}
+            onChange={setSearchFilter}
+            aria-controls={resultsSectionId}
+          />
+        </Dialog.Header>
 
         <section
           role="list"
+          id={resultsSectionId}
           style={{ display: "flex", flexDirection: "column" }}
         >
           {filteredExercises.length === 0 && (
@@ -48,7 +60,7 @@ export const ExerciseSearchDialogButton = ({
             </p>
           )}
           {filteredExercises.map((exercise) => (
-            <div
+            <button
               className={styles.exerciseOption}
               role="listitem"
               onClick={(event) => {
@@ -76,7 +88,7 @@ export const ExerciseSearchDialogButton = ({
                   style={{ justifyContent: "flex-start" }}
                 />
               </div>
-            </div>
+            </button>
           ))}
         </section>
       </Dialog>

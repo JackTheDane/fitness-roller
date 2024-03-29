@@ -2,20 +2,30 @@
   width: 90svw;
   max-width: 800px;
   height: 90svh;
+  padding: 0;
+}
+
+.header {
+  position: sticky;
+  top: 0;
+  background-color: canvas;
+  display: flex;
+  padding-top: 16px;
+}
+
+.closeButton {
+  justify-self: flex-end;
+  background-color: transparent;
+}
+
+.title {
+  margin: 0;
+  font-size: 20px;
 }
 
 .content {
   display: flex;
   flex-direction: column;
   gap: 8px;
-}
-
-.header {
-  display: grid;
-  align-items: center;
-}
-
-.closeButton {
-  justify-self: flex-end;
-  background-color: transparent;
+  padding: 0 16px 16px;
 }

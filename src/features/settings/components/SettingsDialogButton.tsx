@@ -8,11 +8,7 @@ export const SettingsDialogButton = () => {
 
   return (
     <>
-      <button
-        title="Open options"
-        onClick={() => setIsDialogOpen(true)}
-        // style={{ position: "fixed", bottom: 5, right: 5 }}
-      >
+      <button title="Open options" onClick={() => setIsDialogOpen(true)}>
         ⚙
       </button>
       <Dialog
@@ -20,6 +16,7 @@ export const SettingsDialogButton = () => {
         open={isDialogOpen}
         onClose={() => setIsDialogOpen(false)}
       >
+        <Dialog.Header title="Settings" />
         <SettingsForm />
       </Dialog>
     </>
