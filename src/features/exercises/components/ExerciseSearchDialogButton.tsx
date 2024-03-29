@@ -3,10 +3,10 @@ import { Dialog } from "../../../components/Dialog";
 import styles from "./ExerciseSearchDialogButton.module.scss";
 import { Exercise } from "../../../data/types";
 import { TextInput } from "../../../components/TextInput";
-import { EXERCISES } from "../../../data/exercises";
 import { ExerciseExampleImage } from "./ExerciseExampleImage";
 import { generateImageSrcUrl } from "../../../utils/generateImageSrcUrl";
 import { ExerciseBadges } from "./ExerciseBadges";
+import { useSettingsStore } from "../../settings/stores/SettingsStore";
 
 export type ExerciseSearchDialogButtonProps = {
   onExerciseSelected(exercise: Exercise): void;
@@ -18,11 +18,13 @@ export const ExerciseSearchDialogButton = ({
   const [isDialogOpen, setIsDialogOpen] = useState(false);
   const [searchFilter, setSearchFilter] = useState("");
 
+  const { exercises } = useSettingsStore();
+
   const resultsSectionId = useId();
 
   const lowerCaseSearchFilter = searchFilter.toLowerCase();
 
-  const filteredExercises = EXERCISES.filter(({ name }) =>
+  const filteredExercises = exercises.filter(({ name }) =>
     name.toLowerCase().includes(lowerCaseSearchFilter)
   );
 
