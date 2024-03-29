@@ -3,4 +3,17 @@
   border-radius: 999px;
   padding: 4px 8px;
   color: white;
+
+  &:where([data-size="small"]) {
+    padding: 2px 4px;
+    font-size: 12px;
+  }
+
+  &:where([data-size="medium"]) {
+    font-size: 16px;
+  }
+
+  &:where([data-size="large"]) {
+    font-size: 20px;
+  }
 }

@@ -78,5 +78,6 @@ export const useRandomExercise = (options?: RandomExerciseOptions) => {
   return {
     exercise: selectedExercise,
     refreshRandomExercise,
+    setSelectedExercise,
   };
 };

@@ -1,0 +1,15 @@
+.exerciseOption {
+  padding: 8px;
+  margin: 0 -8px;
+  cursor: pointer;
+  transition: background-color 300ms;
+  display: flex;
+  gap: 16px;
+  align-items: center;
+  border-radius: 10px;
+  min-height: 100px;
+
+  &:hover {
+    background-color: rgba($color: #fff, $alpha: 0.3);
+  }
+}

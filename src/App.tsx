@@ -4,14 +4,14 @@ import { generateImageSrcUrl } from "./utils/generateImageSrcUrl";
 import { useSettingsStore } from "./features/settings/stores/SettingsStore";
 import { SettingsDialogButton } from "./features/settings/components/SettingsDialogButton";
 import { useSaveSettingsBeforeUnload } from "./features/settings/hooks/useSaveSettingsBeforeUnload";
-import { Badge } from "./components/Badge";
-import { EXERCISE_BADGE_COLORS } from "./features/exercises/constants";
 import { ExerciseExampleImage } from "./features/exercises/components/ExerciseExampleImage";
 import { useExerciseRoulette } from "./features/exercises/hooks/useExerciseRoulette";
 import { DifficultyLevelsInformation } from "./features/exercises/components/DifficultyLevelsInformation";
 import { Collapsible } from "./features/animations/Collapsible";
 import { ExerciseLabel } from "./features/exercises/components/ExerciseLabel";
 import { Separator } from "./components/Separator";
+import { ExerciseSearchDialogButton } from "./features/exercises/components/ExerciseSearchDialogButton";
+import { ExerciseBadges } from "./features/exercises/components/ExerciseBadges";
 
 function App() {
   useSaveSettingsBeforeUnload();
@@ -24,25 +24,23 @@ function App() {
     minorMuscles,
   } = useSettingsStore();
 
-  const { exercise, isRefreshing, refreshRandomExercise } = useExerciseRoulette(
-    {
+  const { exercise, isRefreshing, refreshRandomExercise, setSelectedExercise } =
+    useExerciseRoulette({
       exercises,
       equipmentTypes,
       exerciseTypes,
       majorMuscles,
       minorMuscles,
-    }
-  );
+    });
 
   return (
     <div className={styles.app}>
       <div className={styles.toolbar}>
-        <div style={{ display: "flex", justifyContent: "flex-end" }}>
-          <SettingsDialogButton />
-        </div>
+        <ExerciseSearchDialogButton onExerciseSelected={setSelectedExercise} />
         <button className={styles.rerollButton} onClick={refreshRandomExercise}>
           🎲 Reroll
         </button>
+        <SettingsDialogButton />
       </div>
       {!exercise && "No exercise..."}
       {exercise && (
@@ -52,6 +50,7 @@ function App() {
             flexDirection: "column",
             gap: 12,
             textAlign: "center",
+            alignItems: "center",
           }}
         >
           <ExerciseExampleImage
@@ -59,7 +58,7 @@ function App() {
             loading={isRefreshing}
           />
           <ExerciseLabel animate={!isRefreshing}>{exercise.name}</ExerciseLabel>
-          <Collapsible delay={{ open: 500 }} open={!isRefreshing}>
+          <Collapsible delay={{ open: 900 }} open={!isRefreshing}>
             <div className={styles.exerciseInformation}>
               <Separator />
               <DifficultyLevelsInformation exercise={exercise} />
@@ -75,40 +74,7 @@ function App() {
                   <p style={{ marginTop: 0 }}>{exercise.modifications}</p>
                 </div>
               )}
-              <div className={styles.badges}>
-                {exercise.equipmentTypes.map((equipmentType) => (
-                  <Badge
-                    color={EXERCISE_BADGE_COLORS.equipmentTypes}
-                    key={equipmentType}
-                  >
-                    {equipmentType}
-                  </Badge>
-                ))}
-                {exercise.exerciseTypes.map((exerciseType) => (
-                  <Badge
-                    color={EXERCISE_BADGE_COLORS.exerciseTypes}
-                    key={exerciseType}
-                  >
-                    {exerciseType}
-                  </Badge>
-                ))}
-                {exercise.majorMuscles.map((majorMuscle) => (
-                  <Badge
-                    color={EXERCISE_BADGE_COLORS.majorMuscles}
-                    key={majorMuscle}
-                  >
-                    {majorMuscle}
-                  </Badge>
-                ))}
-                {exercise.minorMuscles.map((minorMuscle) => (
-                  <Badge
-                    color={EXERCISE_BADGE_COLORS.minorMuscles}
-                    key={minorMuscle}
-                  >
-                    {minorMuscle}
-                  </Badge>
-                ))}
-              </div>
+              <ExerciseBadges exercise={exercise} />
             </div>
           </Collapsible>
         </div>

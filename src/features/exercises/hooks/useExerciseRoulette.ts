@@ -12,8 +12,11 @@ const runExerciseRoulette = async (callback: () => void) => {
 };
 
 export const useExerciseRoulette = (options?: RandomExerciseOptions) => {
-  const { exercise, refreshRandomExercise: _refreshRandomExercise } =
-    useRandomExercise(options);
+  const {
+    exercise,
+    refreshRandomExercise: _refreshRandomExercise,
+    setSelectedExercise,
+  } = useRandomExercise(options);
 
   const [isRefreshing, setIsRefreshing] = useState(false);
 
@@ -32,5 +35,6 @@ export const useExerciseRoulette = (options?: RandomExerciseOptions) => {
     exercise,
     isRefreshing,
     refreshRandomExercise,
+    setSelectedExercise,
   };
 };
