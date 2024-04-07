@@ -3,7 +3,6 @@ import styles from "./App.module.scss";
 import { generateImageSrcUrl } from "./features/exercises/utils/generateImageSrcUrl";
 import { useSettingsStore } from "./features/settings/stores/SettingsStore";
 import { SettingsDialogButton } from "./features/settings/components/SettingsDialogButton";
-import { useSaveSettingsBeforeUnload } from "./features/settings/hooks/useSaveSettingsBeforeUnload";
 import { ExerciseExampleImage } from "./features/exercises/components/ExerciseExampleImage";
 import { useExerciseRoulette } from "./features/exercises/hooks/useExerciseRoulette";
 import { DifficultyLevelsInformation } from "./features/exercises/components/DifficultyLevelsInformation";
@@ -14,8 +13,6 @@ import { ExerciseSearchDialogButton } from "./features/exercises/components/Exer
 import { ExerciseBadges } from "./features/exercises/components/ExerciseBadges";
 
 function App() {
-  useSaveSettingsBeforeUnload();
-
   const {
     exercises,
     equipmentTypes,

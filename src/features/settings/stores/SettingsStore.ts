@@ -49,18 +49,20 @@ const getStorageValues = () => {
 
 const valuesFromStorage = getStorageValues();
 
-console.log(valuesFromStorage);
-
 export const SettingsStore = create<SettingsStoreValues & SettingsStoreActions>(
   (set) => ({
     setValues(callbackOrValue) {
-      // console.log(values);
       set((state) => ({
         ...state,
         ...(typeof callbackOrValue === "function"
           ? callbackOrValue(state)
           : callbackOrValue),
       }));
+
+      localStorage.setItem(
+        SETTINGS_STORAGE_IDENTIFIER,
+        JSON.stringify(SettingsStore.getState())
+      );
     },
     exercises: valuesFromStorage?.exercises
       ? EXERCISES.filter((exercise) =>
