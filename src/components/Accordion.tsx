@@ -7,7 +7,7 @@ import {
 } from "react";
 import styles from "./Accordion.module.scss";
 import { combineClasses } from "../utils/combineClasses";
-import { Collapsible } from "../features/animations/Collapsible";
+import { Collapsible } from "./animations/Collapsible";
 
 export type AccordionProps = {
   title?: ReactNode;

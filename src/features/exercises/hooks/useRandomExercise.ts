@@ -65,9 +65,7 @@ const getRandomExercise = (
 };
 
 export const useRandomExercise = (options?: RandomExerciseOptions) => {
-  const [selectedExercise, setSelectedExercise] = useState<Exercise>(
-    getRandomExercise(undefined, options)
-  );
+  const [selectedExercise, setSelectedExercise] = useState<Exercise>();
 
   const refreshRandomExercise = () => {
     setSelectedExercise((currentExercise) =>

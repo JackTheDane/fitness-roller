@@ -8,7 +8,7 @@ import {
 } from "react";
 import styles from "./Dialog.module.scss";
 import { combineClasses } from "../utils/combineClasses";
-import { useRefValue } from "../utils/useRefValue";
+import { useRefValue } from "../hooks/useRefValue";
 
 export type DialogProps = {
   onClose?(): void;

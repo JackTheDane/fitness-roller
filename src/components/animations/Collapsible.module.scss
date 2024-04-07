@@ -1,0 +1,35 @@
+.wrapper {
+  display: grid;
+  overflow: hidden;
+  transition-property: grid-template-rows, grid-template-columns, opacity;
+  transition-duration: 300ms;
+  opacity: 0;
+
+  &.horizontal {
+    grid-template-columns: 0fr;
+
+    .content {
+      min-width: 0;
+    }
+  }
+
+  &.vertical {
+    grid-template-rows: 0fr;
+
+    .content {
+      min-height: 0;
+    }
+  }
+
+  &.open {
+    opacity: 1;
+
+    &.horizontal {
+      grid-template-columns: 1fr;
+    }
+
+    &.vertical {
+      grid-template-rows: 1fr;
+    }
+  }
+}

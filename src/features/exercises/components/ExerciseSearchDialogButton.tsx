@@ -4,7 +4,7 @@ import styles from "./ExerciseSearchDialogButton.module.scss";
 import { Exercise } from "../../../data/types";
 import { TextInput } from "../../../components/TextInput";
 import { ExerciseExampleImage } from "./ExerciseExampleImage";
-import { generateImageSrcUrl } from "../../../utils/generateImageSrcUrl";
+import { generateImageSrcUrl } from "../utils/generateImageSrcUrl";
 import { ExerciseBadges } from "./ExerciseBadges";
 import { useSettingsStore } from "../../settings/stores/SettingsStore";
 

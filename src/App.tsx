@@ -1,13 +1,13 @@
 import styles from "./App.module.scss";
 // import { useRandomExercise } from "./features/exercises/hooks/useRandomExercise";
-import { generateImageSrcUrl } from "./utils/generateImageSrcUrl";
+import { generateImageSrcUrl } from "./features/exercises/utils/generateImageSrcUrl";
 import { useSettingsStore } from "./features/settings/stores/SettingsStore";
 import { SettingsDialogButton } from "./features/settings/components/SettingsDialogButton";
 import { useSaveSettingsBeforeUnload } from "./features/settings/hooks/useSaveSettingsBeforeUnload";
 import { ExerciseExampleImage } from "./features/exercises/components/ExerciseExampleImage";
 import { useExerciseRoulette } from "./features/exercises/hooks/useExerciseRoulette";
 import { DifficultyLevelsInformation } from "./features/exercises/components/DifficultyLevelsInformation";
-import { Collapsible } from "./features/animations/Collapsible";
+import { Collapsible } from "./components/animations/Collapsible";
 import { ExerciseLabel } from "./features/exercises/components/ExerciseLabel";
 import { Separator } from "./components/Separator";
 import { ExerciseSearchDialogButton } from "./features/exercises/components/ExerciseSearchDialogButton";
@@ -35,15 +35,12 @@ function App() {
 
   return (
     <div className={styles.app}>
-      <div className={styles.toolbar}>
+      <div className={styles.upperToolbar}>
         <ExerciseSearchDialogButton onExerciseSelected={setSelectedExercise} />
-        <button className={styles.rerollButton} onClick={refreshRandomExercise}>
-          🎲 Reroll
-        </button>
+
         <SettingsDialogButton />
       </div>
-      {!exercise && "No exercise..."}
-      {exercise && (
+      {exercise ? (
         <div
           style={{
             display: "flex",
@@ -78,7 +75,44 @@ function App() {
             </div>
           </Collapsible>
         </div>
+      ) : (
+        <div
+          style={{
+            display: "flex",
+            flexDirection: "column",
+            gap: 16,
+            textAlign: "center",
+            padding: "60px 40px",
+          }}
+        >
+          <span style={{ fontSize: 60 }}>🎲</span>
+          <b style={{ fontSize: "1.2em" }}>
+            Click the button below to roll an exercise
+          </b>
+          <span style={{ fontSize: 30 }}>👇</span>
+        </div>
       )}
+      <div className={styles.lowerToolbar}>
+        <button onClick={refreshRandomExercise} style={{ width: "100%" }}>
+          🎲 Roll an exercise
+        </button>
+        <Collapsible
+          open={!!exercise}
+          style={{
+            transitionProperty: "all",
+            width: exercise ? "100%" : 0,
+            marginLeft: exercise ? 8 : 0,
+          }}
+        >
+          <button
+            onClick={() => window.alert("No yet implemented")}
+            style={{ width: "100%", minWidth: "content" }}
+            disabled={isRefreshing}
+          >
+            ✅ Mark as completed
+          </button>
+        </Collapsible>
+      </div>
     </div>
   );
 }

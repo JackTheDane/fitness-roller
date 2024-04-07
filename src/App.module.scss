@@ -7,19 +7,25 @@
   max-width: 100%;
   align-items: center;
   justify-content: flex-start;
-  padding: 16px;
+  padding: 16px 16px 100px;
 }
 
-.toolbar {
+.upperToolbar {
   display: flex;
-  // flex-direction: column;
   margin-block-end: 16px;
   width: 100%;
   gap: 8px;
 }
 
-.rerollButton {
+.lowerToolbar {
+  display: flex;
+  position: fixed;
   width: 100%;
+  inset-block-end: 20px;
+  max-width: 800px;
+  padding: 0 16px;
+  transform: translateX(-50%);
+  inset-inline-start: 50%;
 }
 
 .exerciseInformation {

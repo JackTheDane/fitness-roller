@@ -1,4 +1,4 @@
-import { Exercise } from "../data/types";
+import { Exercise } from "../../../data/types";
 
 const ensureTrailingSlash = (string: string) =>
   string.endsWith("/") ? string : `${string}/`;

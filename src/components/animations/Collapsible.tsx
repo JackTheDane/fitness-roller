@@ -8,6 +8,7 @@ export type CollapsibleProps = {
     open?: number;
     close?: number;
   };
+  direction?: "horizontal" | "vertical";
 } & ComponentPropsWithoutRef<"div">;
 
 export const Collapsible = ({
@@ -15,13 +16,18 @@ export const Collapsible = ({
   children,
   delay,
   style,
+  direction = "vertical",
   ...props
 }: CollapsibleProps) => {
   const transitionDelay = open ? delay?.open : delay?.close;
 
   return (
     <div
-      className={combineClasses(styles.wrapper, open && styles.open)}
+      className={combineClasses(
+        styles.wrapper,
+        direction === "vertical" ? styles.vertical : styles.horizontal,
+        open && styles.open
+      )}
       style={{
         transitionDelay: transitionDelay ? `${transitionDelay}ms` : "unset",
         ...style,
